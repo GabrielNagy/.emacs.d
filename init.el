@@ -56,6 +56,10 @@
   :ensure t
   :defer t)
 
+(use-package puppet-mode
+  :ensure t
+  :defer t)
+
 (use-package lua-mode
   :ensure t
   :config
