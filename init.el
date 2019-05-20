@@ -454,6 +454,7 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
   :bind (("<backtab>" . neotree-toggle))
   :defer
   :config
+  (setq neo-window-fixed-size nil)
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
     (evil-set-initial-state 'neotree-mode 'normal)
     (evil-define-key 'normal neotree-mode-map
@@ -469,8 +470,18 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
       (kbd "I")   'neotree-hidden-file-toggle
       (kbd "H")   'neotree-hidden-file-toggle
       (kbd "q")   'neotree-hide
-      (kbd "l")   'neotree-enter
-))
+      (kbd "l")   'neotree-enter)
+    :init
+    ;; Set the neo-window-width to the current width of the
+    ;; neotree window, to trick neotree into resetting the
+    ;; width back to the actual window width.
+    ;; Fixes: https://github.com/jaypei/emacs-neotree/issues/262
+    (eval-after-load "neotree"
+      '(add-to-list 'window-size-change-functions
+                    (lambda (frame)
+                      (let ((neo-window (neo-global--get-window)))
+                        (unless (null neo-window)
+                          (setq neo-window-width (window-width neo-window))))))))
 
 ;;; The Emacs Shell
 (defun company-eshell-history (command &optional arg &rest ignored)
