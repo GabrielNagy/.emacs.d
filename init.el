@@ -438,6 +438,7 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
 (require 'init-org)
 (require 'init-go)
 (require 'init-python)
+(require 'init-ruby)
 (require 'init-cpp)
 
 (use-package lsp-mode
