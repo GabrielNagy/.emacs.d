@@ -26,5 +26,10 @@
   (exec-path-from-shell-initialize)
   (set-fontset-font t 'unicode "Apple Color Emoji" nil 'prepend))
 
+(when (string= system-type "darwin")
+  (setq dired-use-ls-dired t
+        insert-directory-program "/usr/local/bin/gls"
+        dired-listing-switches "-aBhl --group-directories-first"))
+
 (provide 'init-platform)
 ;;; init-platform.el ends here
