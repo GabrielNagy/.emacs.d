@@ -66,5 +66,14 @@
 
 (setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "REVIEWING(r)" "NEXT(n)" "|" "DONE(d)" "CANCELLED(c)")))
 
+(setq-default prettify-symbols-alist
+                '(("#+BEGIN_SRC"     . "λ")
+                  ("#+END_SRC"       . "λ")
+                  ("[ ]" . "☐")
+                  ("[X]" . "☑")
+                  ("[-]" . "❍")))
+
+(global-prettify-symbols-mode 1)
+
 (provide 'init-org)
 ;;; init-org.el ends here
