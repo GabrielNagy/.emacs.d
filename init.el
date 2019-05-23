@@ -458,7 +458,7 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
 
 (use-package neotree
   :ensure t
-  :bind (("<backtab>" . neotree-toggle))
+  :bind (("C-x C-n" . neotree-toggle))
   :defer
   :config
   (setq neo-window-fixed-size nil)
