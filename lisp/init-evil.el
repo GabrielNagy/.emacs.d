@@ -90,6 +90,12 @@
 
 (use-package evil
   :ensure t
+  :init
+  (setq evil-want-Y-yank-to-eol t
+        evil-respect-visual-line-mode t
+        evil-symbol-word-search t
+        shift-select-mode nil
+        evil-visual-state-cursor 'hollow)
   :commands (evil-mode evil-define-key)
   :config
   (add-hook 'evil-mode-hook 'g--config-evil)
