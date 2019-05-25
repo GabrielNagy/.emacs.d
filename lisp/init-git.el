@@ -16,7 +16,9 @@
 
 (use-package forge
   :ensure t
-  :after magit)
+  :after magit
+  :config
+  (add-hook 'forge-post-mode-hook (lambda () (auto-fill-mode 0))))
 
 (defun gitconfig-line-indented-p ()
   "Return t if the current line is indented correctly."
