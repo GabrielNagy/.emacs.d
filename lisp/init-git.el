@@ -1,15 +1,22 @@
-;;; init-git.el --- major git modes for config, ignore and attributes.
-;;;
-;;; Code: down below
-;;; 
+;;; init-git.el --- git-related packages and modes
 ;;; Commentary: based on magit/git-modes
-;;; init-git.el ends here
+;;; Code: below
 
 (require 'conf-mode)
 (require 'easymenu)
 (require 'thingatpt)
 (require 'rx)
-(require 'conf-mode)
+
+(use-package magit
+  :ensure t
+  :defer t
+  :config
+  (setq magit-branch-arguments nil)
+  (setq magit-push-always-verify nil))
+
+(use-package forge
+  :ensure t
+  :after magit)
 
 (defun gitconfig-line-indented-p ()
   "Return t if the current line is indented correctly."
@@ -323,5 +330,5 @@ If ARG is omitted or nil, move point backward one field."
 (provide 'init-git)
 ;; Local Variables:
 ;; indent-tabs-mode: nil
-;; End:
-;;; gitignore-mode.el ends here
+
+;;; init-git.el ends here

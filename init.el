@@ -328,13 +328,6 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
   :config
   (setq-default highlight-symbol-idle-delay 1.5))
 
-(use-package magit
-  :ensure t
-  :defer t
-  :config
-  (setq magit-branch-arguments nil)
-  (setq magit-push-always-verify nil))
-
 (use-package undo-tree
   :ensure t
   :diminish undo-tree-mode
