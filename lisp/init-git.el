@@ -20,6 +20,10 @@
   :config
   (add-hook 'forge-post-mode-hook (lambda () (auto-fill-mode 0))))
 
+(use-package magit-todos
+  :ensure t
+  :config (magit-todos-mode) (setq magit-todos-keyword-suffix (rx (optional "(" (1+ (not (any ")"))) ")") (char ":" " "))))
+
 (defun gitconfig-line-indented-p ()
   "Return t if the current line is indented correctly."
   (save-excursion
