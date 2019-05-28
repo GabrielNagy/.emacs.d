@@ -20,6 +20,9 @@
   :config
   (add-hook 'forge-post-mode-hook (lambda () (auto-fill-mode 0))))
 
+(use-package gist
+  :ensure t)
+
 (defun gitconfig-line-indented-p ()
   "Return t if the current line is indented correctly."
   (save-excursion

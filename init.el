@@ -187,9 +187,6 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
   :ensure t
   :commands emmet-mode)
 
-(use-package gist
-  :ensure t)
-
 (use-package helm-projectile
   :commands (helm-projectile helm-projectile-switch-project)
   :ensure t)
