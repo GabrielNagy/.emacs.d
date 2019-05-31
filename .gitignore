@@ -58,3 +58,6 @@ nov-places
 
 # bm mode
 bm-repository
+
+# emacs custom variables
+custom.el
