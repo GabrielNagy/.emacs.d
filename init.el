@@ -403,6 +403,7 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
 (require 'init-python)
 (require 'init-ruby)
 (require 'init-cpp)
+(require 'init-rss)
 
 (use-package lsp-mode
   :hook (prog-mode . lsp))

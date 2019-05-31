@@ -51,6 +51,8 @@
                   org-capture-mode
                   sunshine-mode
                   bm-show-mode
+                  elfeed-search-mode
+                  elfeed-show-mode
                   nov-mode
                   term-mode))
     (add-to-list 'evil-emacs-state-modes mode))
