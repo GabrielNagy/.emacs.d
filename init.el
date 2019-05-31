@@ -31,6 +31,7 @@
 (add-to-list 'exec-path "/usr/local/bin")
 (add-to-list 'exec-path "/usr/bin")
 
+(setq shift-select-mode 1)
 
 ;; Take out the trash
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
