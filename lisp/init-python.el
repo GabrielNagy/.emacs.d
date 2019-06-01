@@ -18,7 +18,6 @@
 
 (add-hook 'python-mode-hook 'hs-minor-mode
 	  (lambda ()
-        (flycheck-mode -1)
 	    (setq indent-tabs-mode nil)
 	    (setq tab-width 4)
 	    (setq python-indent-offset 4))

@@ -88,8 +88,6 @@
   (defun setup-tide-mode ()
     (interactive)
     (tide-setup)
-    (flycheck-mode +1)
-    (setq flycheck-check-syntax-automatically '(save mode-enabled))
     (eldoc-mode +1)
     (tide-hl-identifier-mode +1)
     ;; company is an optional dependency. You have to
@@ -396,7 +394,6 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
 (require 'init-fonts)
 (require 'init-powerline)
 (require 'init-evil)
-(require 'init-flycheck)
 (require 'init-git)
 (require 'init-org)
 (require 'init-go)

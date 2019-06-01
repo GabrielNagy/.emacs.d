@@ -45,7 +45,6 @@
                   custom-new-theme-mode
                   dired-mode
                   eshell-mode
-                  flycheck-error-list-mode
                   git-rebase-mode
                   special-mode
                   org-capture-mode
@@ -63,8 +62,6 @@
   ;; Use insert state in these modes
   (dolist (mode '(magit-log-edit-mode))
     (add-to-list 'evil-insert-state-modes mode))
-
-  (add-to-list 'evil-buffer-regexps '("\\*Flycheck"))
 
   (evil-add-hjkl-bindings occur-mode-map 'emacs
     (kbd "/")		'evil-search-forward
