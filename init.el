@@ -31,8 +31,6 @@
 (add-to-list 'exec-path "/usr/local/bin")
 (add-to-list 'exec-path "/usr/bin")
 
-(setq shift-select-mode 1)
-
 ;; Take out the trash
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file 'noerror)
@@ -484,6 +482,10 @@ The IGNORED argument is... Ignored."
 ;; (when (memq window-system '(mac ns x))
 ;;   (exec-path-from-shell-initialize))
 ;; fails on ubuntu
+
+(cua-selection-mode 1)
+(setq shift-select-mode 1)
+(setq delete-selection-mode 1)
 
 (provide 'init)
 ;;; init.el ends here
