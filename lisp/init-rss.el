@@ -25,14 +25,12 @@
        ("https://jvns.ca/atom.xml" cs linux)
        ("https://zwischenzugs.com/feed/" cs linux)
        ("http://nullprogram.com/feed/" emacs cs linux)
+       ("https://worthdoingbadly.com/feed.xml" cs linux)
+       ("https://astr0baby.wordpress.com/feed/" linux qemu)
        ("https://xkcd.com/rss.xml" webcomics)
-       ("http://angad19.github.io/blog/feed.xml" emacs cs)
-       ("http://cestlaz.github.io/rss.xml" emacs education cs)
        ("http://pragmaticemacs.com/feed/" emacs)
        ("http://sachachua.com/blog/feed/" emacs)
        ("https://mdk.fr/feeds/all.atom.xml" emacs cs)
-       ("http://emacsblog.org/feed/" emacs)
-       ("https://kieranhealy.org/index.xml" emacs sociology)
        ("http://planet.emacsen.org/atom.xml" emacs)))
 
 
