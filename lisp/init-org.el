@@ -14,6 +14,9 @@
 (use-package htmlize
   :ensure t)
 
+(use-package ox-jira
+  :ensure t)
+
 (use-package org-bullets
   :after org
   :ensure t
