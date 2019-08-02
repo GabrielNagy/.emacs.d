@@ -58,6 +58,10 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode)))
 
+(use-package deadgrep
+  :ensure t
+  :bind ((("C-c d" . deadgrep))))
+
 (use-package diminish
   :ensure t
   :defer t)
