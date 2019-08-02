@@ -16,6 +16,9 @@
 (require 'package)
 (setq package-enable-at-startup nil)
 
+(setq recentf-max-saved-items 200)
+(setq recentf-max-menu-items 200)
+
 ;; add lisp directry to path (recursive)
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
