@@ -49,6 +49,7 @@
                   special-mode
                   org-capture-mode
                   sunshine-mode
+				  magit-blame-mode
                   bm-show-mode
                   elfeed-search-mode
                   elfeed-show-mode
