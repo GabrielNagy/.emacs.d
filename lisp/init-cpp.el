@@ -61,7 +61,17 @@
     (clang-format-buffer))))
 
 (defun my-c++-mode-hook ()
-  (c-set-style "stroustrup")
+  (c-add-style "microsoft"
+               '("stroustrup"
+                 (c-offsets-alist
+                  (innamespace . [0])
+                  (inline-open . 0)
+                  (inher-cont . c-lineup-multi-inher)
+                  (arglist-cont-nonempty . +)
+                  (template-args-cont . +))))
+  (setq c-default-style "microsoft")
+  (c-set-offset 'innamespace 0)
+  (setq c-basic-offset 4)
   (add-hook 'before-save-hook 'clang-format-buffer-smart nil 'local))
   ;; (auto-fill-mode))
   ;; (c-toggle-auto-hungry-state 1))
