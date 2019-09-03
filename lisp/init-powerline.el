@@ -3,26 +3,25 @@
 ;;; Commentary:
 
 ;;; Code:
-(use-package doom-modeline
-      :ensure t
-      :hook (after-init . doom-modeline-mode)
-      :config (setq doom-modeline-height 10)
-      )
+;; (use-package doom-modeline
+;;       :ensure t
+;;       :hook (after-init . doom-modeline-mode)
+;;       :config (setq doom-modeline-height 10)
+;;       )
 
-
-
-;; (use-package spaceline
-;;   :ensure t
-;;   :defer t
-;;   :init
-;;   (progn
-;;     (require 'spaceline-config)
-;;     (setq powerline-height '20)
-;;     (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
-;;     (setq spaceline-workspace-numbers-unicode t)
-;;     (setq spaceline-window-numbers-unicode t)
-;;     (setq powerline-default-separator 'zigzag)
-;;     (spaceline-spacemacs-theme)))
+(use-package spaceline
+  :ensure t
+  :defer t
+  :init
+  (progn
+    (require 'spaceline-config)
+    (setq powerline-height '20)
+    (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
+    (setq spaceline-workspace-numbers-unicode t)
+    (setq spaceline-window-numbers-unicode t)
+    (setq powerline-default-separator 'zigzag)
+    (spaceline-spacemacs-theme)
+	))
 
 (use-package nyan-mode
   :ensure t
