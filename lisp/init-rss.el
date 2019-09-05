@@ -23,6 +23,7 @@
 (setq elfeed-feeds
       '(("http://nullprogram.com/feed/" cs)
        ("https://jvns.ca/atom.xml" cs linux)
+       ("https://tenderlovemaking.com/atom.xml" cs ruby)
        ("https://zwischenzugs.com/feed/" cs linux)
        ("http://nullprogram.com/feed/" emacs cs linux)
        ("https://worthdoingbadly.com/feed.xml" cs linux)
