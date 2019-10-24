@@ -403,6 +403,7 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
   :ensure t)
 
 (use-package neotree
+(use-package yafolding
   :ensure t
   :bind (("C-x C-n" . neotree-toggle))
   :defer
@@ -435,6 +436,10 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
                       (let ((neo-window (neo-global--get-window)))
                         (unless (null neo-window)
                           (setq neo-window-width (window-width neo-window))))))))
+      (evil-define-key 'normal yafolding-mode-map
+      (kbd "TAB") 'yafolding-toggle-element
+      (kbd "SPC") 'yafolding-go-parent-element)
+  :hook ((prog-mode . yafolding-mode)))
 
 ;;; The Emacs Shell
 (defun company-eshell-history (command &optional arg &rest ignored)
