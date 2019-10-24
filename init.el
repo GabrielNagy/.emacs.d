@@ -402,44 +402,69 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
 (use-package company-lsp
   :ensure t)
 
-(use-package neotree
 (use-package yafolding
   :ensure t
-  :bind (("C-x C-n" . neotree-toggle))
-  :defer
   :config
-  (setq neo-window-fixed-size nil)
-  (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-    (evil-set-initial-state 'neotree-mode 'normal)
-    (evil-define-key 'normal neotree-mode-map
-      (kbd "RET") 'neotree-enter
-      (kbd "TAB") 'neotree-quick-look
-      (kbd "c")   'neotree-create-node
-      (kbd "r")   'neotree-rename-node
-      (kbd "d")   'neotree-delete-node
-      (kbd "j")   'neotree-next-line
-      (kbd "k")   'neotree-previous-line
-      (kbd "g")   'neotree-refresh
-      (kbd "C")   'neotree-change-root
-      (kbd "I")   'neotree-hidden-file-toggle
-      (kbd "H")   'neotree-hidden-file-toggle
-      (kbd "q")   'neotree-hide
-      (kbd "l")   'neotree-enter)
-    :init
-    ;; Set the neo-window-width to the current width of the
-    ;; neotree window, to trick neotree into resetting the
-    ;; width back to the actual window width.
-    ;; Fixes: https://github.com/jaypei/emacs-neotree/issues/262
-    (eval-after-load "neotree"
-      '(add-to-list 'window-size-change-functions
-                    (lambda (frame)
-                      (let ((neo-window (neo-global--get-window)))
-                        (unless (null neo-window)
-                          (setq neo-window-width (window-width neo-window))))))))
       (evil-define-key 'normal yafolding-mode-map
       (kbd "TAB") 'yafolding-toggle-element
       (kbd "SPC") 'yafolding-go-parent-element)
   :hook ((prog-mode . yafolding-mode)))
+
+(use-package vscode-icon
+  :ensure t
+  :commands (vscode-icon-for-file))
+
+(use-package dired-sidebar
+  :bind (("C-x C-n" . dired-sidebar-toggle-sidebar))
+  :ensure t
+  :commands (dired-sidebar-toggle-sidebar)
+  :init
+  (add-hook 'dired-sidebar-mode-hook
+            (lambda ()
+              (unless (file-remote-p default-directory)
+                (auto-revert-mode))))
+  :config
+  (push 'toggle-window-split dired-sidebar-toggle-hidden-commands)
+  (push 'rotate-windows dired-sidebar-toggle-hidden-commands)
+
+  (setq dired-sidebar-subtree-line-prefix "__")
+  (setq dired-sidebar-theme 'vscode)
+  (setq dired-sidebar-use-term-integration t)
+  (setq dired-sidebar-use-custom-font t))
+
+;; (use-package neotree
+;;   :ensure t
+;;   :bind (("C-x C-n" . neotree-toggle))
+;;   :defer
+;;   :config
+;;   (setq neo-window-fixed-size nil)
+;;   (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+;;     (evil-set-initial-state 'neotree-mode 'normal)
+;;     (evil-define-key 'normal neotree-mode-map
+;;       (kbd "RET") 'neotree-enter
+;;       (kbd "TAB") 'neotree-quick-look
+;;       (kbd "c")   'neotree-create-node
+;;       (kbd "r")   'neotree-rename-node
+;;       (kbd "d")   'neotree-delete-node
+;;       (kbd "j")   'neotree-next-line
+;;       (kbd "k")   'neotree-previous-line
+;;       (kbd "g")   'neotree-refresh
+;;       (kbd "C")   'neotree-change-root
+;;       (kbd "I")   'neotree-hidden-file-toggle
+;;       (kbd "H")   'neotree-hidden-file-toggle
+;;       (kbd "q")   'neotree-hide
+;;       (kbd "l")   'neotree-enter)
+;;     :init
+;;     ;; Set the neo-window-width to the current width of the
+;;     ;; neotree window, to trick neotree into resetting the
+;;     ;; width back to the actual window width.
+;;     ;; Fixes: https://github.com/jaypei/emacs-neotree/issues/262
+;;     (eval-after-load "neotree"
+;;       '(add-to-list 'window-size-change-functions
+;;                     (lambda (frame)
+;;                       (let ((neo-window (neo-global--get-window)))
+;;                         (unless (null neo-window)
+;;                           (setq neo-window-width (window-width neo-window))))))))
 
 ;;; The Emacs Shell
 (defun company-eshell-history (command &optional arg &rest ignored)
