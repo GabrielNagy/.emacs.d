@@ -387,6 +387,13 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
 (require 'init-cpp)
 (require 'init-rss)
 
+(use-package rust-mode
+  :ensure t
+  :config
+  (define-key rust-mode-map (kbd "C-c C-c") 'rust-run)
+  (define-key rust-mode-map (kbd "C-c C-b") 'rust-compile)
+  (define-key rust-mode-map (kbd "C-c C-t") 'rust-test))
+
 (use-package lsp-mode
   :hook (prog-mode . lsp))
 
