@@ -1,4 +1,4 @@
-# .emacs.d [![Build Status](https://travis-ci.org/GabrielNagy/.emacs.d.svg?branch=master)](https://travis-ci.org/GabrielNagy/.emacs.d)
+# .emacs.d [![Build Status](https://github.com/GabrielNagy/.emacs.d/workflows/Startup/badge.svg)](https://github.com/GabrielNagy/.emacs.d/actions?workflow=Startup)
 
 ...or how to configure an editor in 1,5k LOC
 
