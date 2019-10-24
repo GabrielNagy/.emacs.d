@@ -14,6 +14,9 @@
   (setq magit-branch-arguments nil)
   (setq magit-push-always-verify nil))
 
+(use-package evil-magit
+  :ensure t)
+
 (use-package forge
   :ensure t
   :after magit
