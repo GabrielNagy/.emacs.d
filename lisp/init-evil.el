@@ -6,28 +6,25 @@
   "Configure evil leader mode"
   (evil-leader/set-leader ",")
   (evil-leader/set-key
-    "," 'other-window
-    "." 'mode-line-other-buffer        ;
-    ":" 'eval-expression
-    "b" 'helm-mini		       ;; Switch to another buffer
-    "d"	'elpy-goto-definition
-    "k"	'elpy-doc
-    "B"	'magit-blame-toggle
-    "c"	'comment-dwim-2
-    "f"	'helm-imenu
-    "g"	'magit-status
-    "l"	'whitespace-mode	       ;; Show invisible characters
-    "o"	'delete-other-windows	       ;; C-w o
-    "p"	'helm-show-kill-ring
-    "s"	'ag-project		       ;; Ag search from project's root
-    "S"	'delete-trailing-whitespace
-    "t"	'gtags-reindex
-    "T"	'xref-find-definitions
-    "r" 'xref-find-references
-    "#" 'server-edit
-    "w"	'save-buffer
-    "x"	'helm-M-x
-    "y"	'simpleclip-copy)
+	"," 'other-window
+	"." 'mode-line-other-buffer
+	":" 'eval-expression
+    "b" 'helm-mini
+    "d" 'lsp-find-definition
+    "B" 'magit-blame-toggle
+    "c" 'comment-dwim-2
+    "f" 'helm-imenu
+    "g" 'magit-status
+    "l" 'whitespace-mode
+    "L" 'delete-trailing-whitespace
+    "o" 'delete-other-windows
+    "p" 'helm-show-kill-ring
+    "r" 'lsp-find-references
+    "s" 'rg-project
+    "S" 'rg-dwim
+    "t" 'gtags-reindex
+    "w" 'save-buffer
+    "x" 'helm-M-x)
 
   (defun magit-blame-toggle ()
     "Toggle magit-blame-mode on and off interactively."

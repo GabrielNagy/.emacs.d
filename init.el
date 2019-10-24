@@ -230,6 +230,11 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
   (setq ag-reuse-buffers t)
   (setq ag-reuse-window t))
 
+(use-package rg
+  :ensure t
+  :config
+  (setq rg-group-result t))
+
 (use-package comment-dwim-2
   :ensure t)
 

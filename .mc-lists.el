@@ -35,4 +35,5 @@
         evil-search-word-backward
         helm-mini
         keyboard-escape-quit
+        rust-run
         ))
