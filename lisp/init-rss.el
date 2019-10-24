@@ -33,6 +33,7 @@
 	   ("https://apod.nasa.gov/apod.rss" news)
        ("https://astr0baby.wordpress.com/feed/" linux qemu)
        ("https://xkcd.com/rss.xml" webcomics)
+       ("https://blog.cryptographyengineering.com/atom.xml" cs news)
        ("http://pragmaticemacs.com/feed/" emacs)
        ("http://sachachua.com/blog/feed/" emacs)
        ("https://mdk.fr/feeds/all.atom.xml" emacs cs)
