@@ -61,3 +61,14 @@ bm-repository
 
 # emacs custom variables
 custom.el
+
+# auto package update junk
+/.last-package-update-day
+
+# elpy
+/elpy/
+
+/transient/
+/ac-comphist.dat
+/forge-database.sqlite
+/.lsp-session-v1
