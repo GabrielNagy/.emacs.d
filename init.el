@@ -437,6 +437,14 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
   (setq dired-sidebar-use-term-integration t)
   (setq dired-sidebar-use-custom-font t))
 
+(use-package highlight-indent-guides
+  :ensure t
+  :hook (prog-mode . highlight-indent-guides-mode)
+  :config
+  (setq highlight-indent-guides-method 'character)
+  (setq highlight-indent-guides-delay 0.02)
+  (setq highlight-indent-guides-responsive 'top))
+
 ;; (use-package neotree
 ;;   :ensure t
 ;;   :bind (("C-x C-n" . neotree-toggle))
