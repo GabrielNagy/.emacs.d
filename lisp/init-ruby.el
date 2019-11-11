@@ -28,5 +28,23 @@
   :init
   (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode))
 
+(use-package ruby-hash-syntax
+  :ensure t
+  :bind ((("C-c :" . ruby-hash-syntax-toggle)))
+  :after ruby-mode)
+
+(use-package rspec-mode
+  :ensure t
+  :after ruby-mode
+  :init
+  (progn
+    (setq rspec-use-rake-flag nil))
+  :config
+  (progn
+    (defadvice rspec-compile (around rspec-compile-around activate)
+      "Use BASH shell for running the specs because of ZSH issues."
+      (let ((shell-file-name "/bin/bash"))
+        ad-do-it))))
+
 (provide 'init-ruby)
 ;;; init-ruby.el ends here

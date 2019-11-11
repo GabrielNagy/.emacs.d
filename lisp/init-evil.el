@@ -13,6 +13,7 @@
     "d" 'lsp-find-definition
     "B" 'magit-blame-toggle
     "c" 'comment-dwim-2
+    "e" 'flymake-show-diagnostics-buffer
     "f" 'helm-imenu
     "g" 'magit-status
     "l" 'whitespace-mode

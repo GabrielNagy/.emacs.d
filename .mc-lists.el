@@ -21,6 +21,7 @@
         evil-next-line
         evil-normal-state
         evil-previous-line
+        evil-replace
         evil-search-forward
         evil-yank
         mouse-yank-primary
