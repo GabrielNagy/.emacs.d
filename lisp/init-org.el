@@ -11,6 +11,12 @@
   :config
   (setq org-re-reveal-root "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/"))
 
+(use-package org-re-reveal-ref
+  :ensure t)
+
+(use-package oer-reveal
+  :ensure t)
+
 (use-package htmlize
   :ensure t)
 
