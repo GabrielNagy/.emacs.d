@@ -534,3 +534,4 @@ The IGNORED argument is... Ignored."
 ;;; init.el ends here
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
+(setq scroll-conservatively most-positive-fixnum)
