@@ -530,6 +530,12 @@ The IGNORED argument is... Ignored."
 (setq shift-select-mode 1)
 (setq delete-selection-mode 1)
 
+(when (require 'ansi-color nil t)
+  (defun my-colorize-compilation-buffer ()
+    (when (eq major-mode 'compilation-mode)
+      (ansi-color-apply-on-region compilation-filter-start (point-max))))
+  (add-hook 'compilation-filter-hook 'my-colorize-compilation-buffer))
+
 (provide 'init)
 ;;; init.el ends here
 (put 'downcase-region 'disabled nil)
