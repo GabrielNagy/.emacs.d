@@ -235,6 +235,9 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
   :config
   (setq rg-group-result t))
 
+(use-package clojure-mode
+  :ensure t)
+
 (use-package comment-dwim-2
   :ensure t)
 
