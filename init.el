@@ -410,6 +410,9 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
 (use-package company-lsp
   :ensure t)
 
+(use-package crystal-mode
+  :ensure t)
+
 (use-package yafolding
   :ensure t
   :config
